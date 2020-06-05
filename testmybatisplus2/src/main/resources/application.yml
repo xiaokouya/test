@@ -1,0 +1,41 @@
+
+server:
+  port: 8989
+  servlet:
+    context-path: /springboot
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  application:
+    name: test-thymelead
+  thymeleaf:
+    cache: false    #\u5173\u95EDthymeleaf\u7684\u7F13\u5B58
+    encoding: UTF-8
+    mode: HTML5
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&useSSL=false&characterEncoding=utf-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+  profiles:
+    active: dev   #\u8BBE\u7F6E\u4E3A\u5F00\u53D1\u73AF\u5883
+mybatis-plus:
+  type-aliases-package: com.zhao.pojo
+  mapper-locations: classpath:com/zhao/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
