@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录访问a9</title>
+</head>
+<body>
+<p th:text="访问一次"/>
+<p th:text="${name} eq 'zhangsan'"></p>
+<p th:text="${name} eq 'xiaozhang'"></p>
+<p th:text="${age} > 18"></p>
+<p th:text="${age} > 15 or ${age} > 19 "></p>
+
+<p>---------switch-----------</p>
+<div th:switch="${age}">
+    <p th:case="10">他今年10岁</p>
+    <p th:case="17">他今年17岁</p>
+    <p th:case="*">他今年其他岁</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录访问b1</title>
+</head>
+<body>
+<p th:text="访问一次"/>
+<a th:href="@{http://www.baidu.com}">访问百度</a>
+<p th:text="'欢迎' + ${name} + '加入我们'"></p>
+<p th:text="|欢迎${name}加入我们|"></p>
+
+<p>---------测试dates内置类</p>
+<!--展示的是当前日期-->
+<p th:text="${#dates.createNow()}"></p>
+<!--展示的当天日期，时分秒归0-->
+<p th:text="${#dates.createToday()}"></p>
+
+<p th:text="${#strings.isEmpty(name)}"></p>
+<p th:text="${#strings.startsWith(name,'张')}"></p>
+<p th:text="${#strings.endsWith(name,'三')}"></p>
+<p th:text="${'他的长度为：' + #strings.length(name)}"></p>
+<p th:text="${#strings.equals(password)}"></p>
+<!--产生10个随机数-->
+<p th:text="${#strings.randomAlphanumeric(10)}"></p>
+<p th:text="'现在所处的国家：' + ${#locale.country}"></p>
+
+<p>-------设置超链接-------</p>
+<a href="http://www.baidu.com" th:href="@{/hello3/a2(name='张三',password='123456')}">跳转hello</a>
+</body>
+</html>

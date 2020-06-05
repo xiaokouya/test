@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录访问a5</title>
+</head>
+<body>
+<p th:text="访问一次"/>
+<p>------------对时间做一些处理--------------</p>
+<p th:text="${#dates.format(mydate,'yyyy-MM-dd')}"></p>
+<p th:text="${#dates.format(mydate,'yyyy-MM-dd HH:mm:ss')}"></p>
+<hr/>
+<p>------------对字符串做一些处理--------------</p>
+<p th:text="${#strings.replace('www.baidu.com','.','$')}"></p>
+<p th:text="${#strings.toUpperCase('www.baidu.com')}"></p>
+<p th:text="${#strings.trim('www.  baidu.com')}"></p>
+<p>------------对set集合做一些处理--------------</p>
+<p th:text="${#sets.contains(names,'boot-1')}"></p>
+<p th:text="${#sets.contains(names,'boot-9')}"></p>
+<p th:text="${#sets.size(names)}"></p>
+<!--这个0是一个数字类型，不是一个对象，同时ids是一个list集合-->
+<p th:text="${#sets.contains(ids,0)}"></p>
+<p th:text="${names[1]}"></p>
+</body>
+</html>

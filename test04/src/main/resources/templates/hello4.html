@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录访问hello4</title>
+</head>
+<body>
+<h2>
+    <tr th:each="t : ${ts}">
+        <td th:text="${t.id}"></td>
+        <td th:text="${t.name}"></td>
+        <p>--------------</p>
+    </tr>
+</h2>
+
+<h2>
+    <p>==========测试stat属性=========</p>
+    <tr th:each="t,stat : ${ts}">
+        <td th:text="${stat.index}"></td>
+        <td th:text="${t.id}"></td>
+        <td th:text="${t.name}"></td>
+<!--        判断这个是否是最后一个，是的话执行相应的操作-->
+        <td th:if="!${stat.last}">
+            <p>--------------</p>
+        </td>
+    </tr>
+</h2>
+
+<h2>
+    <p>------------------</p>
+    <p>进行逻辑判断 if else</p>
+
+<!--    这个相当于if-->
+    <p th:if="${stu.age}>20">
+        年龄大于20岁
+    </p>
+<!--    这个相当于else-->
+    <p th:unless="${stu.age}>20">
+        年龄小于等于20岁
+    </p>
+</h2>
+
+<h2>
+    <p>---------------</p>
+    <p>测试switch语句</p>
+    <div th:switch="${stu.name}">
+        <p th:case="小美">小美</p>
+        <p th:case="小天">小天</p>
+        <p th:case="小花">小花</p>
+        <p th:case="小倩">小倩</p>
+<!--        这个*要放最后，匹配所有-->
+        <p th:case="*">我也不知道叫啥</p>
+    </div>
+</h2>
+</body>
+</html>

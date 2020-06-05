@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录访问a5</title>
+</head>
+<body>
+<p th:text="访问一次"/>
+<p th:text="${#httpServletRequest.getRemoteAddr()}"></p>
+<p th:text="${#httpServletRequest.getAttribute('req')}"></p>
+<p th:text="${#httpSession.getId()}"></p>
+<p th:text="${#httpServletRequest.getServletContext().getRealPath('/')}"></p>
+<p th:text="${req}"></p>
+<p th:text="${session.sess}"></p>
+<p th:text="${application.app}"></p>
+<p th:text="${url}"></p>
+</body>
+</html>

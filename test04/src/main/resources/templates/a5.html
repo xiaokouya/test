@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录访问a5</title>
+</head>
+<body>
+<p th:text="访问一次"/>
+<p th:text="${uid}"></p>
+<p th:text="${name}"></p>
+<p th:utext="${name}"></p>
+
+<p>------------直接获取对象--------------</p>
+<p th:text="${user.id}"></p>
+<p th:text="${user.username}"></p>
+<p th:text="${user.password}"></p>
+
+<p>------------先获取对象，再获取属性--------------</p>
+<div th:object="${user}">
+    <p th:text="'用户id：'+ *{id}"></p>
+    <p th:text="'用户名： '+ *{username}"></p>
+    <p th:text="'密码： '+ *{password}"></p>
+</div>
+
+<p>------------对集合和时间做一些合适的处理--------------</p>
+<p th:text="${#dates.format(mydate,'yyyy-MM-dd')}"></p>
+<hr/>
+</body>
+</html>

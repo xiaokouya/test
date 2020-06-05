@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录访问b2</title>
+</head>
+<body>
+<p th:text="访问一次"/>
+<p th:text="2017+3"></p>
+<table border="5px">
+    <form action="/hello3/a1" th:attr="action=@{/hello3/a2}">
+      <tr>
+          <td>用户名</td>
+          <td><input type="text" name="name" th:attr="value='张三'"></td>
+      </tr>
+
+      <tr>
+          <td>密码</td>
+          <td><input type="password" name="password"></td>
+      </tr>
+
+      <tr>
+          <td><input type="reset" th:value="重置"></td>
+          <td><input type="submit" th:value="提交"></td>
+      </tr>
+    </form>
+</table>
+<img src="/a1.jpg" alt="a1图片" th:attr="src=@{/a2.jpg},title='很美好',alt='美景a2'">
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录访问hello2</title>
+</head>
+<body>
+<h2>
+    <p th:text="访问一次hello2"/>
+</h2>
+
+<h2>
+    <p>-----------------------</p>
+    <p>获取对象属性</p>
+    <p th:text="${user.username}"></p>
+    <p th:text="${user.password}"></p>
+</h2>
+
+<h2>
+    <p>------------------------</p>
+    <p>获取对象的对象属性</p>
+    <p th:text="${user.friend.username}"></p>
+    <p th:text="${user.friend.password}"></p>
+</h2>
+
+<h2 th:object="${user}">
+    <p>------------------------</p>
+    <p>用*来获取对象属性</p>
+    <p th:text="*{username}"></p>
+    <p th:text="*{password}"></p>
+    <p th:text="*{friend.username}"></p>
+    <p th:text="*{friend.password}"></p>
+</h2>
+
+<h2 th:object="${user}">
+    <p>------------------------</p>
+    <p>测试thymeleaf的方法调用</p>
+    <p th:text="*{username.split('')[0]}"></p>
+    <p th:text="*{username.split('')[1]}"></p>
+    <p th:text="*{username.split('')[2]}"></p>
+</h2>
+</body>
+</html>

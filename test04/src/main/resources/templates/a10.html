@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录访问a9</title>
+</head>
+<body>
+<p th:text="访问一次"/>
+<p>-----------遍历list集合----------</p>
+<div th:each="user,statu:${list}">
+    <p th:text="'uid '+ ${user.id}"></p>
+    <p th:text="'用户名' + ${user.username}"></p>
+    <p th:text="'密码' + ${user.password}"></p>
+    <p th:if="${!statu.last}">---------------</p>
+</div>
+<p>-----------遍历map集合----------</p>
+<div th:each="m,statu:${map}">
+<tr>
+    <td th:text="'key: ' + ${m.key}"></td>
+    <td th:text="'value: uid '+ ${m.value.id}"></td>
+    <td th:text="'用户名 ' + ${m.value.username}"></td>
+    <td th:text="'密码 ' + ${m.value.password}"></td>
+</tr>
+</div>
+</body>
+</html>

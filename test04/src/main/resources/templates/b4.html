@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录访问b2</title>
+</head>
+<body>
+<p th:text="访问一次"/>
+<div th:with="u=${username},p=${password}">
+    <p th:text="${u}"></p>
+    <p th:text="${p}"></p>
+</div>
+
+</body>
+</html>

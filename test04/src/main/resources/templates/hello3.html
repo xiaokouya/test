@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录访问hello1</title>
+</head>
+<body>
+<h2>
+    <p>测试内置对象dates的方法</p>
+    今天是<span th:text="${#dates.format(today,'yyyy-MM-dd')}"></span>
+</h2>
+
+<h2>
+    <p>---------------------</p>
+    <!--    直接就是一个字符串-->
+    <p th:text="'这个是一个字符串，不是一个变量'"></p>
+</h2>
+
+<h2>
+    <p>----------------------</p>
+    <p>这个就是一个数字，不是一个变量</p>
+    <!--    直接就是一个数字类型-->
+    <p th:text="2020"></p>
+    <!--    直接进行加法运算-->
+    <p th:text="1996+23"></p>
+</h2>
+
+<h2>
+    <p>-----------------</p>
+    <p>这个是一个boolean类型，不是一个变量</p>
+
+<!--    只有当结果是true，才会输出内部的东西-->
+    <p th:if="true">
+        你猜对了，true
+    </p>
+    <p th:if="false">
+        你猜错了，false
+    </p>
+</h2>
+
+<h2>
+    <p>-----------------------</p>
+    <p>测试进行字符串拼接</p>
+    <p th:text="'欢迎'+${user.username}+'!'"></p>
+</h2>
+
+<h2>
+    <p>-----------------------</p>
+    <p>简化版的拼接</p>
+    <p th:text="|欢迎${user.friend.username}进行简化版的拼接！|"></p>
+</h2>
+
+<h2>
+    <p>----------------------</p>
+    <p>进行表达式运算测试</p>
+<!--    注意${}里面进行的是ognl表达式运算，外面才进行thymeleaf运算-->
+    <p th:text="${stu.age}-1"></p>
+<!--    这里直接输出true or false-->
+    <p th:text="${stu.age}-1==15"></p>
+<!--    直接用> < == !=进行运算-->
+    <p th:text="${stu.age}-1 > 15"></p>
+<!--    进行别名避免歧义-->
+    <p th:text="${stu.age}-1 lt 15"></p>
+</h2>
+
+<h2>
+    <p>---------------------</p>
+    <p>进行逻辑判断</p>
+    <p th:text="${stu.name}=='小花'"></p>
+<!--    这个逻辑没有搞出来了-->
+    <p th:text="${stu.name} ? '小花2':'小花'"></p>
+<!--    从controller层传过来的为null，可以输出 二狗-->
+    <p th:text="${teacher.name} ?: '二狗'"></p>
+</h2>
+</body>
+</html>
