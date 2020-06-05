@@ -1,0 +1,11 @@
+server:
+  port: 8989
+  servlet:
+    context-path: /springboot
+spring:
+  application:
+    name: test-thymelead
+  thymeleaf:
+    cache: false    #\u5173\u95EDthymeleaf\u7684\u7F13\u5B58
+    encoding: UTF-8
+    mode: HTML5
