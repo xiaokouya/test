@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录访问hello</title>
+    <script type="text/javascript" src="/js/jquery-1.8.3.js"  th:src="@{/js/jquery-1.8.3.js}"></script>
+    <script type="text/javascript" src="/js/echarts.min.js" th:src="@{/js/echarts.min.js}"></script>
+    <script type="text/javascript" src="/js/china.js" th:src="@{/js/china.js}"></script>
+</head>
+<body>
+<p th:text="给人一种直观感A，B，C所占的比例"/>
+<!--先定义一个容器-->
+<div id="china" style="width: 600px;height: 600px;"></div>
+<script>
+    var myChart = echarts.init($("#china").get(0));
+
+    var option = {
+        series:{
+            type:'pie',
+            data:[
+                {name:'A',value:1213},
+                {name:'B',value:5617},
+                {name:'C',value:3874}
+            ]
+        }
+    };
+
+    myChart.setOption(option);
+</script>
+</body>
+</html>
